@@ -10,13 +10,20 @@ import Preview from './components/Preview'
 import './App.css';
 
 class App extends Component {
+  state = {
+    markedText:""
+  }
+  updateText = (text)=>{
+    this.setState({markedText:Marked(text)},()=>document.getElementById('preview').innerHTML=this.state.markedText);
+  }
+
   render() {
     return (
       <Router>
       <div className="App">
         <Header />
         <div className="container">
-            <Editor />
+            <Editor updateText={this.updateText} />
             <Preview />
         </div>
         <Footer />

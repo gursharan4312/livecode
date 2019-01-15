@@ -12,6 +12,7 @@ class Preview extends Component{
   }
 }
 const previewStyles = {
-  minHeight:"200px"
+  minHeight:"200px",
+  textAlign:"left"
 }
 export default Preview;
